@@ -1,6 +1,7 @@
 import React, { useState, useEffect,useCallback } from "react";
 
 import MoviesList from "./components/MoviesList";
+import MoviesObj from "./MoviesObj";
 import "./App.css";
 
 function App() {
@@ -52,6 +53,8 @@ function App() {
   return (
     <React.Fragment>
       <section>
+      <MoviesObj />
+
         <button onClick={fetchDataHandler}>Fetch Movies</button>
         {error && !cancelRetyring && (
           <button onClick={() => setCancelRetrying(true)}>Cancel</button>
