@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
+import Movie from "./components/Movie";
 
-function MoviesObj() {
+function MoviesObj(props) {
     const titleRef = useRef();
     const openingTextRef = useRef();
     const releaseDateRef = useRef();
@@ -12,7 +13,8 @@ function MoviesObj() {
         openingText : openingTextRef.current.value,
         releaseDate : releaseDateRef.current.value
      }
-    console.log("New Movie Object:", newMovie);
+    // console.log("New Movie Object:", newMovie);
+    props.onAddMovie(newMovie)
   };
 
   return (
